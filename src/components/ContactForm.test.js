@@ -16,8 +16,10 @@ test('App renders the contact form header', () => {
     expect(header).toBeInTheDocument();
 });
 
-test('renders ONE error message if user enters less then 5 characters into firstname.', async () => {
-    
+test('Contact Form renders ONE error message if user enters less then 5 characters into firstname.', async () => {
+    render(<ContactForm />);
+    const error = screen.getByLabelText(/first name/i);
+    console.log(error);
 });
 
 test('renders THREE error messages if user enters no values into any fields.', async () => {
